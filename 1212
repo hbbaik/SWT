@@ -1,0 +1,9 @@
+n = input().strip()
+
+if n == "0":
+    print(0)
+else:
+    result = bin(int(n[0]))[2:]  
+    for ch in n[1:]:
+        result += bin(int(ch))[2:].zfill(3)  
+    print(result)
