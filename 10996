@@ -1,0 +1,13 @@
+n = int(input())
+
+if n == 1:
+    print("*")
+else:
+    odd = ''.join('*' if i % 2 == 0 else ' ' for i in range(n)).rstrip()
+    even = ''.join('*' if i % 2 == 1 else ' ' for i in range(n)).rstrip()
+
+    for i in range(n * 2):
+        if i % 2 == 0:
+            print(odd)
+        else:
+            print(even)
