@@ -1,0 +1,13 @@
+n = int(input())
+arr = list(map(int, input().split()))
+
+arr.sort()
+
+prefix_sum = 0
+answer = 0
+
+for i in range(n):
+    answer += arr[i] * i - prefix_sum
+    prefix_sum += arr[i]
+
+print(answer * 2)
