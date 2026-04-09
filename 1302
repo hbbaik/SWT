@@ -1,0 +1,23 @@
+import sys
+
+input = sys.stdin.readline
+
+N = int(input())
+books = {}
+
+for _ in range(N):
+    title = input().strip()
+    if title in books:
+        books[title] += 1
+    else:
+        books[title] = 1
+
+max_count = max(books.values())
+result = []
+
+for title in books:
+    if books[title] == max_count:
+        result.append(title)
+
+result.sort()
+print(result[0])
