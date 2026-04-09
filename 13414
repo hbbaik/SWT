@@ -1,0 +1,15 @@
+import sys
+
+input = sys.stdin.readline
+
+K, L = map(int, input().split())
+students = {}
+
+for i in range(L):
+    student_id = input().strip()
+    students[student_id] = i
+
+result = sorted(students.items(), key=lambda x: x[1])
+
+for student_id, _ in result[:K]:
+    print(student_id)
