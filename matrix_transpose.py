@@ -1,37 +1,39 @@
 import random
 
-def num(p):
-    matrix = []
-    for i in range(p):
+def def3(n):
+    a = []
+    for i in range(n):
         row = []
-        for j in range(p):
-            row.append(random.randint(1, p * p * 10 - 1))
-        matrix.append(row)
-    return matrix
+        for j in range(n):
+            row.append(random.randint(1, n * n * 10 - 1))
+        a.append(row)
+    return a
 
-def show(square):
-    for row in square:
-        for value in row:
-            print(f"{value:5}", end="")
+def def4(a):
+    n = len(a)
+    for i in range(n):
+        for j in range(n):
+            print(f"{a[i][j]:6d}", end=" ")
         print()
 
-N = int(input("N을 입력하세요 (2~5): "))
+n = int(input())
 
-if N <= 1 or N > 5:
-    print("N은 1보다 크고 5보다 작거나 같아야 합니다.")
-else:
-    A = num(N)
+if 1 < n <= 5:
+    A = def3(n)
 
-    print("A")
-    show(A)
-
-    # 전치 행렬 계산
     result = []
-    for i in range(N):
+
+    for i in range(n):
         row = []
-        for j in range(N):
+        for j in range(n):
             row.append(A[j][i])
         result.append(row)
 
+    print("A")
+    def4(A)
+
     print("Transpose of A")
-    show(result)
+    def4(result)
+
+else:
+    print("input error")
