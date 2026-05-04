@@ -1,6 +1,5 @@
 import random
 
-# N x N 행렬을 랜덤한 정수값으로 만드는 함수
 def num(p):
     matrix = []
     for i in range(p):
@@ -10,7 +9,6 @@ def num(p):
         matrix.append(row)
     return matrix
 
-# 행렬을 보기 좋게 출력하는 함수
 def show(square):
     for row in square:
         for value in row:
