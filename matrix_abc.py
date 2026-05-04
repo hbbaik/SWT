@@ -1,54 +1,51 @@
 import random
 
-def num(p):
-    matrix = []
-    for i in range(p):
+def def3(n):
+    a = []
+    for i in range(n):
         row = []
-        for j in range(p):
-            row.append(random.randint(1, p * p * 10 - 1))
-        matrix.append(row)
-    return matrix
+        for j in range(n):
+            row.append(random.randint(1, n * n * 10 - 1))
+        a.append(row)
+    return a
 
-def show(square):
-    for row in square:
-        for value in row:
-            print(f"{value:5}", end="")
+def def4(a):
+    n = len(a)
+    for i in range(n):
+        for j in range(n):
+            print(f"{a[i][j]:6d}", end=" ")
         print()
 
-N = int(input("N을 입력하세요 (2~5): "))
+n = int(input())
 
-if N <= 1 or N > 5:
-    print("N은 1보다 크고 5보다 작거나 같아야 합니다.")
-else:
-    A = num(N)
-    B = num(N)
-    C = num(N)
+if 1 < n <= 5:
+    A = def3(n)
+    B = def3(n)
+    C = def3(n)
 
-    print("A")
-    show(A)
-    print("B")
-    show(B)
-    print("C")
-    show(C)
-
-    # A x B 계산
-    ab = []
-    for i in range(N):
-        row = []
-        for j in range(N):
-            s = 0
-            for k in range(N):
-                s += A[i][k] * B[k][j]
-            row.append(s)
-        ab.append(row)
-
-    # (A x B) + C 계산
     result = []
-    for i in range(N):
+
+    for i in range(n):
         row = []
-        for j in range(N):
-            row.append(ab[i][j] + C[i][j])
+        for j in range(n):
+            value = 0
+            for k in range(n):
+                value += A[i][k] * B[k][j]
+            value += C[i][j]
+            row.append(value)
         result.append(row)
 
+    print("A")
+    def4(A)
+
+    print("B")
+    def4(B)
+
+    print("C")
+    def4(C)
+
     print("A x B + C")
-    show(result)
+    def4(result)
+
+else:
+    print("input error")
